@@ -276,14 +276,20 @@ header{
             }
 
             .item-nav{
-                display: flex;
-                align-items: center;
-                margin-left: 15px;
-                height: 40px;
-                color: #82959B;
-                font-size: 0.75rem;
-                line-height: 1rem;
-                letter-spacing: 0.1em;
+                div{
+                    display: flex;
+                    align-items: center;
+                    margin-left: 15px;
+                    height: 40px;
+                    color: #82959B;
+                    font-size: 0.75rem;
+                    line-height: 1rem;
+                    letter-spacing: 0.1em;
+                }
+            }
+            .item-nav:hover{
+                background-color: #131f23;
+                border-radius: 10px;
             }
             
         }
@@ -295,9 +301,111 @@ header{
         flex-grow: 1;
         display: flex;
         justify-content: center;
+
         .subcontainer{
             width: 1120px;
-            height: 20px;
+            
+            #head{
+                width: 1088px;
+                height: 226px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-left: 10%;
+
+                .item{
+                    width: 280px;
+                    height: 210px;
+                    border-radius: 16px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    margin-top: 10px;
+                    color: white;
+                    background-color: wheat;
+                    
+                    position: relative;
+
+                    .overlay{
+                        background-color: rgba(0, 0, 0, 0.5);
+                        border-radius: 16px;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        height: 100%;
+                        width: 100%;
+                    
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        align-items: flex-start;
+
+                        .title{
+                            font-size: 20px;
+                            margin-left: 15px;
+                            font-weight: bold;
+                        }
+
+                        .description{
+                            font-size: 12px;
+                            margin-left: 15px;
+                        }
+
+                        .community{
+                            font-size: 10px;
+                            margin-left: 15px;
+                            display: flex;
+
+                            .image{
+                                border-radius: 100px;
+                                margin-top: 5px;
+                                margin-bottom: 5px;
+                                margin-right: 5px;
+                                width: 25px;
+                                height: 25px;    
+                            }
+
+                            .text{
+                                display: flex;
+                                font-weight: bold;
+                                justify-content: center;
+                                flex-direction: column;
+                            }
+                        }
+                    }
+                }
+                .item1{
+                    background-image: url(img/head_article_01.jpeg);
+                    background-size: cover;
+                }
+                .item2{
+                    background-image: url(img/head_article_02.jpeg);
+                    background-size: cover;
+                }
+                .item3{
+                    background-image: url(img/head_article_03.jpeg);
+                    background-size: cover;
+                }
+
+            }
+
+            #main{
+                display: flex;
+
+                #main-content{
+                    width: 756px;
+                }
+
+                #sidebar{
+                    width: 316px;
+                    height: 394px;
+
+                    margin-top: 10px;
+                    margin-left: 10px;
+
+                    border-radius: 8px;
+                    background-color: #04090a;
+                }
+            }
         }
     }
 }
@@ -327,13 +435,20 @@ header{
             .border-neutral-weak{
                 margin: 0px 0px;
             }
-            .item-nav{
+            .item-nav div{
                 margin: 0px 0px;
                 font-size: 0px;
                 height: 0px;
                 width: 0px;
             }
         }
+    }
+
+    .main-container .container{
+        margin-left: 0px;
+    }
+    .main-container .container .subcontainer #head{
+        margin-left: 0px;
     }
 }
 
