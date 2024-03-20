@@ -1,6 +1,9 @@
 :root{
     --color-backgroud: #0B1416;
     --font: verdana, arial, helvetica, sans-serif, "IBM Plex Sans";
+    --sidebar-title-font-size: 0.75rem; 
+    --sidebar-name-font-size: 0.875rem;
+    --sidebar-members-font-size: 0.75rem; 
 }
 
 body{
@@ -29,6 +32,9 @@ header{
 
     border-bottom: 1px solid #3c4345;
 
+    z-index: 2;
+
+    background-color: var(--color-backgroud);
 
     #logo{
         height: 32px;
@@ -312,6 +318,7 @@ header{
                 justify-content: flex-start;
                 align-items: center;
                 margin-left: 10%;
+                z-index: -2;
 
                 .item{
                     width: 280px;
@@ -321,9 +328,10 @@ header{
                     margin-right: 10px;
                     margin-top: 10px;
                     color: white;
-                    background-color: wheat;
                     
                     position: relative;
+
+                    z-index: -1;
 
                     .overlay{
                         background-color: rgba(0, 0, 0, 0.5);
@@ -373,15 +381,15 @@ header{
                         }
                     }
                 }
-                .item1{
+                #item1{
                     background-image: url(img/head_article_01.jpeg);
                     background-size: cover;
                 }
-                .item2{
+                #item2{
                     background-image: url(img/head_article_02.jpeg);
                     background-size: cover;
                 }
-                .item3{
+                #item3{
                     background-image: url(img/head_article_03.jpeg);
                     background-size: cover;
                 }
@@ -392,22 +400,158 @@ header{
                 display: flex;
 
                 #main-content{
-                    width: 756px;
+                    flex-grow: 1;
+                }
+
+                #main-content{
+                    .top{
+                        width: 748px;
+                        height: 32px;
+                        display: flex;
+                        margin-top: 10px;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        .button{
+                            color: #82959b;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 32px;
+                            width: 58px;
+                            border-radius: 15px;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+
+                        .button:hover{
+                            background-color: #223237;
+                        }
+                    }
+                    #feed{
+                        display: flex;
+                        flex-direction: column;
+                        .item{
+                            border-top: 1px solid #3c4345;
+                            .insert{
+                                background-color: #526368;
+                                width: 100%;
+                                height: 250px;
+                                border-radius: 8px;
+                                margin-top: 15px;
+                                margin-bottom: 15px;
+                            }
+                            .insert:hover{
+                                background-color: #223237;
+                            }
+                        }
+                    }
                 }
 
                 #sidebar{
                     width: 316px;
                     height: 394px;
 
-                    margin-top: 10px;
-                    margin-left: 10px;
+                    margin-top: 15px;
+                    margin-left: 32px;
 
                     border-radius: 8px;
                     background-color: #04090a;
+
+                    display: flex;
+                    flex-direction: column;
+
+                    color: #82959B;
+
+                    .title{
+                        font-size: var(--sidebar-title-font-size);
+                        line-height: 1rem;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        margin-top: 20px;
+                        margin-left: 17px;
+                    }
+
+                    #popular-communities-list{
+                        margin-top: 15px;
+                        .item .container{
+                            height: 56px;
+                            width: 284px;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            margin-left: 25px;
+                            margin-top: 15px;
+                            .content{
+                                display: flex;
+
+                                .image{
+                                    margin-right: 10px;
+                                    img{
+                                        height: 30px;
+                                        width: 30px;
+                                        border-radius: 50px;
+                                    }
+                                }
+
+                                .text{
+                                    display: flex;
+                                    flex-direction: column;
+                                    .name{
+                                        color: #b8c5c9;
+                                        font-size: var(--sidebar-name-font-size);
+                                        line-height: 1.25rem;
+                                    }
+                                    .members{
+                                        color: #82959b;
+                                        font-size: var(--sidebar-members-font-size);
+                                    }
+                                }
+                            }
+                        }
+
+                        .item:hover{
+                            background-color: #131f23;
+                        }
+                    }
+
+                    #more{
+                        margin-top: 7px;
+                        margin-left: 17px;
+                        font-size: var(--sidebar-members-font-size);
+                        color: white;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .text{
+                            height: 32px;
+                            width: 76px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        .text:hover{
+                            background-color: #223237;
+                            border-radius: 16px;
+                        }
+                    }
                 }
             }
         }
     }
+}
+
+@media (max-width: 1399px) {
+    .main-container .container #main{
+        margin-left: 20px;
+        margin-right: 10px;
+        flex-grow: 1 !important;
+    }
+    .main-container .container .subcontainer{
+        width: 0px;
+        flex-grow: 1;    
+    } 
 }
 
 @media (max-width: 1199px) {
@@ -452,3 +596,120 @@ header{
     }
 }
 
+@media (max-width: 1100px) {
+    :root{
+
+        --sidebar-title-font-size: 0; 
+        --sidebar-name-font-size: 0; 
+        --sidebar-members-font-size: 0; 
+    }
+    #more{
+        width: 0;
+        height: 0;
+        margin: 0 0 !important;
+    }
+    #popular-communities-list{
+        width: 0;
+        height: 0;
+    }
+    #sidebar{
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 0 !important;
+    }
+    #sidebar div{
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 0 !important;
+    }
+    #popular-communities-list .item .container{
+        width: 0;
+        height: 0;
+    }
+    #popular-communities-list .item .container .image img{
+        width: 0 !important;
+        height: 0 !important;
+    }
+    #main-content{
+        margin-right: 10px;
+    }
+
+    .main-container .container .subcontainer #main #main-content .top{
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 900px) {
+    #head{
+        justify-content: center !important;
+        width: 600px !important;
+    }
+    #item3{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    #item3 .overlay{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    #item3 .overlay div{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    #item3 .overlay div div{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    #item3 .overlay div img{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    #head{
+        width: 400px !important;
+    }
+    #item2{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    #item2 .overlay{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    #item2 .overlay div{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    #item2 .overlay div div{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    #item2 .overlay div img{
+        margin: 0 0 !important;
+        font-size: 0 !important;
+        width: 0px !important;
+        height: 0px !important;
+    }
+    
+}
