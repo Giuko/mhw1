@@ -317,7 +317,6 @@ header{
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                margin-left: 10%;
                 z-index: -2;
 
                 .item{
@@ -398,12 +397,13 @@ header{
 
             #main{
                 display: flex;
-
+                width: 100%;
                 #main-content{
                     flex-grow: 1;
                 }
 
                 #main-content{
+                    margin-left: 20px;
                     .top{
                         width: 748px;
                         height: 32px;
@@ -452,7 +452,8 @@ header{
                     height: 394px;
 
                     margin-top: 15px;
-                    margin-left: 32px;
+                    margin-left: 10px;
+                    margin-right: 16px;
 
                     border-radius: 8px;
                     background-color: #04090a;
